@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./index.css">
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+</head>
+<body>
+
+  <section class="wrapper">
+    <section class="page-body">
+      <img class="logo">
+      <h1>We are launching <b>soon!</b></h1>
+      <p class="header-subtext">Subscribe and get notified</p>
+      <form id="notify-form">
+        <section class="form-input-section">
+          <input id="email" type="text" role="text" class="input-email" placeholder="Your email address..."/>
+          <p id="email-error" class="input-error"></p>
+          <p id="email-success" class="input-success">Thank you for subscribing to PING's newsletter!</p>
+        </section>
+      <button role="button" class="form-submit-button" onclick="">Notify Me</button>
+      </form>
+      <img class="stock-graphic">
+    </section>
+    <section class="page-footer">
+      <section class="socials">
+        <button class="socials-facebook" type="button" onclick="window.open('https://www.facebook.com', 'blank');"></button>
+        <button class="socials-twitter" type="button" onclick="window.open('https://www.twitter.com', 'blank');"></button>
+        <button class="socials-instagram" type="button" onclick="window.open('https://www.instagram.com', 'blank');"></button>
+      </section>
+      <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+      <footer>
+        <p class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="https://github.com/ianwilk20">Ian Wilkinson</a>.
+        </p>
+      </footer>
+    </section>
+  </section>
+</body>
+<script>
+  let emailInput = document.getElementById("email");
+  let emailError = document.getElementById("email-error")
+  let emailSuccess = document.getElementById("email-success")
+
+  let notifyForm = document.getElementById("notify-form")
+  notifyForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(emailInput.value === "") {
+      emailInput.classList.add('invalid')
+      emailError.innerText = 'Whoops! It looks like you forgot to add your email'
+      emailError.classList.add('show-error')
+    } else if (!RegExp(/[^@\s]+@[^@\s]+\.[^@\s]+/gm).test(emailInput.value.toLowerCase())) {
+      emailInput.classList.add('invalid')
+      emailError.innerText = 'Please provide a valid email address'
+      emailError.classList.add('show-error')
+    } else {
+      emailInput.classList.remove('invalid')
+      emailError.classList.remove('show-error')
+      setTimeout(function() {
+        completeNotify()
+      }, 500)
+    }
+  });
+
+  function completeNotify() {
+    emailSuccess.classList.add('show-success')
+    setTimeout(function() {
+      emailSuccess.classList.remove('show-success');
+      emailInput.value = ''
+    }, 4000)
+  }
+
+</script>
+</html>

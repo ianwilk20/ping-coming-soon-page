@@ -1,0 +1,270 @@
+@font-face {
+    font-family: "Libre Franklin";
+    src: url("../assets/fonts/LibreFranklin-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Libre Franklin Italic";
+    src: url("../assets/fonts/LibreFranklin-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
+
+:root {
+    font-size: 20px;
+}
+
+body {
+    font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@media screen and (width > 700px) {
+    .wrapper {
+        padding-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    form {
+        min-width: 80%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+
+    h1 {
+        font-weight: 300;
+        color: hsl(0, 0%, 59%);
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+    .header-subtext {
+        margin-top: 0;
+        margin-bottom: 1.75rem;
+        font-size: 0.7rem;
+    }
+    .page-body, .page-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
+@media screen and (width <= 700px) {
+    .wrapper {
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    form {
+        min-width: 80%;
+        margin-bottom: 4rem;
+    }
+
+    h1 {
+        font-weight: 300;
+        color: hsl(0, 0%, 59%);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    .header-subtext {
+        margin-top: 0;
+        margin-bottom: 1.75rem;
+        font-size: 0.6rem;
+    }
+    .page-body, .page-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+    }
+}
+
+.logo {
+    content: url("../assets/images/logo.svg");
+    transform: scale(0.75);
+    margin-bottom: 1rem;
+}
+
+
+h1 > b {
+    color: hsl(209, 33%, 12%);
+}
+
+
+.input-email {
+    border-radius: 2rem;
+    width: 100%;
+    height: 2.2rem;
+    border: hsl(223, 100%, 88%) 1px solid;
+    text-indent: 1.75rem;
+    box-sizing: border-box;
+}
+
+.input-email::placeholder{
+    color: hsl(223, 100%, 88%);
+    font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+}
+
+.invalid {
+    border: hsl(354, 100%, 66%) 1px solid;
+}
+
+.success {
+    border: hsl(145, 100%, 37%) 1px solid;
+}
+
+.input-error, .input-success {
+    display: none;
+}
+
+.show-success {
+    display: flex;
+    color: hsl(145, 100%, 37%);
+    font-family: "Libre Franklin Italic", Arial, Helvetica, sans-serif;
+    font-size: 0.55rem;
+    justify-content: center;
+    margin-top: 0.35rem;
+}
+
+@media screen and (width > 700px) {
+    .show-error {
+        display: flex;
+        color: hsl(354, 100%, 66%);
+        font-family: "Libre Franklin Italic", Arial, Helvetica, sans-serif;
+        font-size: 0.55rem;
+        margin-top: 0.35rem;
+        margin-left: 1.75rem;
+    }
+
+    .form-input-section {
+        display: flex;
+        flex-direction: column;
+        width: 18rem;
+        margin-right: 0.6rem;
+    }
+
+    .form-submit-button {
+        border-radius: 2rem;
+        width: 8rem;
+        height: 2.2rem;
+        background-color: hsl(223, 87%, 63%);
+        color: white;
+        font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+        border: none;
+        box-shadow: 0px 0px 10px 0px #bdbdbd;
+    }
+
+    .stock-graphic {
+        content: url("../assets/images/illustration-dashboard.png");
+        max-width: 28rem;
+    }
+
+    .copyright {
+        color: hsl(0, 0%, 59%);
+        font-size: 0.6rem;
+        margin-top: 0;
+    }
+}
+
+@media screen and (width <= 700px) {
+    .show-error {
+        display: flex;
+        color: hsl(354, 100%, 66%);
+        font-family: "Libre Franklin Italic", Arial, Helvetica, sans-serif;
+        font-size: 0.55rem;
+        justify-content: center;
+        margin-top: 0.35rem;
+    }
+
+    .form-submit-button {
+        margin-top: 0.5rem;
+        border-radius: 2rem;
+        width: 100%;
+        height: 2.2rem;
+        background-color: hsl(223, 87%, 63%);
+        color: white;
+        font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+        border: none;
+        box-shadow: 0px 0px 10px 0px #bdbdbd;
+    }
+
+    .stock-graphic {
+        content: url("../assets/images/illustration-dashboard.png");
+        max-width: 90%;
+    }
+
+    .copyright {
+        color: hsl(0, 0%, 59%);
+        font-size: 0.5rem;
+        margin-top: 0;
+    }
+}
+
+.form-submit-button:hover {
+    background-color: hsl(223deg 49.85% 65.75%);
+}
+
+.socials {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 50%;
+    margin-bottom: 1rem;
+}
+.socials > button {
+    border-radius: 5rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: hsl(223, 100%, 88%) 1px solid;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.65rem;
+}
+.socials > button:hover {
+    background-color: hsl(223, 87%, 63%);
+}
+
+.socials-facebook {
+    background-image: url("../assets/images/facebook-blue.svg");
+    background-size: 30%;
+}
+.socials-twitter {
+    background-image: url("../assets/images/twitter-blue.svg");
+    background-size: 50%;
+}
+.socials-instagram {
+    background-image: url("../assets/images/instagram-blue.svg");
+    background-size: 50%;
+}
+
+.socials-facebook:hover {
+    background-image: url("../assets/images/facebook-white.svg");
+}
+.socials-twitter:hover {
+    background-image: url("../assets/images/twitter-white.svg");
+}
+.socials-instagram:hover {
+    background-image: url("../assets/images/instagram-white.svg");
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
